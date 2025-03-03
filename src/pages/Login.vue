@@ -1,4 +1,3 @@
-// LoginPage.vue
 <template>
     <div class="position-absolute top-0 end-0 m-3">
       <router-link to="/">
