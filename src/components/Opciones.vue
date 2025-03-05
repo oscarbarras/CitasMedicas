@@ -34,7 +34,7 @@
     border-radius: 90px 5px 5px 5px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: 0.2s ease-in-out;
+    transition: 0.1s ease-in-out;
   }
 
 
@@ -98,14 +98,14 @@
   .card3:hover {
     cursor: pointer;
     scale: 1.1;
-    background-color: rgb(0, 37, 111);
+    background-color: rgb(33, 47, 255);
     box-shadow: #000000;
   }
 
   .card4:hover {
     cursor: pointer;
     scale: 1.1;
-    background-color: #001aad;
+    background-color: #4a8cff;
     box-shadow: #000000;
   }
 
@@ -119,6 +119,9 @@
       3px 3px 0px rgb(179, 175, 175), 4px 4px 0px rgb(179, 175, 175),
       5px 5px 0px rgb(179, 175, 175);
   }
+
+
+  
 </style>
 
 <template>
@@ -136,7 +139,7 @@
     <div class="down">
       <button class="card3">
         <img src="../../public/perfil.svg" alt="PerfilIcono" height="100px" width="100px" />
-        <h2>Centros</h2>
+        <h2>Perfil</h2>
       </button>
       <button class="card4">
         <img src="../../public/sintomas.svg" alt="sintomasIcono" height="100px" width="100px" />

@@ -1,6 +1,7 @@
 <style scoped>
   .fondo {
     position: fixed;
+    z-index: -100;
     inset: -1em;
     --c: 7px;
     background-color: #000;

@@ -2,99 +2,111 @@
   <div class="card p-4 mb-3 bg-light bg-opacity-50 text-black shadow">
     <div class="detalles">
       <form @submit.prevent="submitForm">
-        <div class="mb-3">
-          <label for="name" class="form-label">Nombre</label>
-          <input
-            type="text"
-            id="name"
-            v-model="userData.name"
-            class="form-control"
-            placeholder="Ingresa tu nombre"
-            required
-          />
+        <div class="mb-3 row">
+          <label for="name" class="col-sm-3 col-form-label text-end">Nombre</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              id="name"
+              v-model="userData.name"
+              class="form-control"
+              placeholder="Ingresa tu nombre"
+              required
+            />
+          </div>
         </div>
 
-        <div class="mb-3">
-          <label for="lastname" class="form-label">Apellido</label>
-          <input
-            type="text"
-            id="lastname"
-            v-model="userData.lastname"
-            class="form-control"
-            placeholder="Ingresa tu apellido"
-            required
-          />
+        <div class="mb-3 row">
+          <label for="lastname" class="col-sm-3 col-form-label text-end">Apellido</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              id="lastname"
+              v-model="userData.lastname"
+              class="form-control"
+              placeholder="Ingresa tu apellido"
+              required
+            />
+          </div>
         </div>
 
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input
-            type="email"
-            id="email"
-            v-model="userData.email"
-            class="form-control"
-            placeholder="Ingresa tu email"
-            required
-          />
+        <div class="mb-3 row">
+          <label for="email" class="col-sm-3 col-form-label text-end">Email</label>
+          <div class="col-sm-9">
+            <input
+              type="email"
+              id="email"
+              v-model="userData.email"
+              class="form-control"
+              placeholder="Ingresa tu email"
+              required
+            />
+          </div>
         </div>
 
-        <div class="mb-3">
-          <label for="phone" class="form-label">Teléfono</label>
-          <input
-            type="tel"
-            id="phone"
-            v-model="userData.phone"
-            class="form-control"
-            placeholder="Ingresa tu teléfono"
-            required
-          />
+        <div class="mb-3 row">
+          <label for="phone" class="col-sm-3 col-form-label text-end">Teléfono</label>
+          <div class="col-sm-9">
+            <input
+              type="tel"
+              id="phone"
+              v-model="userData.phone"
+              class="form-control"
+              placeholder="Ingresa tu teléfono"
+              required
+            />
+          </div>
         </div>
 
-        <div class="mb-3">
-          <label for="username" class="form-label">Nombre de Usuario</label>
-          <input
-            type="text"
-            id="username"
-            v-model="userData.username"
-            class="form-control"
-            placeholder="Ingresa tu nombre de usuario"
-            required
-          />
+        <div class="mb-3 row">
+          <label for="username" class="col-sm-3 col-form-label text-end">Usuario</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              id="username"
+              v-model="userData.username"
+              class="form-control"
+              placeholder="Ingresa tu nombre de usuario"
+              required
+            />
+          </div>
         </div>
 
-        <div class="mb-3">
-          <label for="date" class="form-label">Fecha de Creación</label>
-          <input
-            type="date"
-            id="date"
-            v-model="userData.date"
-            class="form-control"
-            required
-          />
+        <div class="mb-3 row">
+          <label for="date" class="col-sm-3 col-form-label text-end">Fecha</label>
+          <div class="col-sm-9">
+            <input
+              type="date"
+              id="date"
+              v-model="userData.date"
+              class="form-control"
+              required
+            />
+          </div>
         </div>
 
-        <div class="mb-3">
-          <label for="password" class="form-label">Contraseña</label>
-          <input
-            type="password"
-            id="password"
-            v-model="userData.password"
-            class="form-control"
-            placeholder="Ingresa tu contraseña"
-            required
-          />
+        <div class="mb-3 row">
+          <label for="password" class="col-sm-3 col-form-label text-end">Contraseña</label>
+          <div class="col-sm-9">
+            <input
+              type="password"
+              id="password"
+              v-model="userData.password"
+              class="form-control"
+              placeholder="Ingresa tu contraseña"
+              required
+            />
+          </div>
         </div>
 
         <div class="d-flex justify-content-center">
-          <!-- <button type="submit" class="btn btn-primary w-50 bg-white text-black">
-            Guardar Datos
-          </button> -->
-        <Boton2/>
+          <Boton2 />
         </div>
       </form>
     </div>
   </div>
 </template>
+
 
 <script setup>
 import { ref } from 'vue';
