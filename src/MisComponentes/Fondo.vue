@@ -4,7 +4,7 @@
     z-index: -100;
     inset: -1em;
     --c: 7px;
-    background-color: #000;
+    background-color: #000000;
     background-image: radial-gradient(
         circle at 50% 50%,
         #0000 1.5px,

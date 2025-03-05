@@ -4,7 +4,7 @@
         <BotonLogOut />
       </router-link>
     </div>
-  <div class="login-container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="login-container d-flex justify-content-center align-items-center mt-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6">
@@ -21,5 +21,5 @@
 
 <script setup>
 import LoginComponent from '@/components/LoginComponent.vue';
-import BotonLogOut from '@/components/BotonLogOut.vue';
+import BotonLogOut from '@/MisComponentes/BotonLogOut.vue';
 </script>

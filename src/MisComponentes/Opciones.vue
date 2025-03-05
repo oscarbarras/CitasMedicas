@@ -1,11 +1,11 @@
-<style scoped>
+  <style scoped>
   .Opciones {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: transparent;
-  padding: 200px;
+  padding: 20px;
   font-size: 2rem;
   font-weight: bold;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -35,6 +35,12 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     transition: 0.1s ease-in-out;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
 
@@ -48,6 +54,12 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     transition: 0.2s ease-in-out;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
 
@@ -61,6 +73,12 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     transition: 0.2s ease-in-out;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
 
@@ -74,6 +92,12 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     transition: 0.2s ease-in-out;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
 
@@ -127,24 +151,25 @@
 <template>
   <div class="Opciones">
     <div class="up">
-      <button class="card1">
-        <img src="../../public/centros.svg" alt="HospitalIcono" height="100px" width="100px" />
-        <h2>Centros</h2>
-      </button>
-      <button class="card2">
-        <img src="../../public/citas.svg" alt="citasIcono" height="90px" width="90px" />
-        <h2>Citas</h2>
-      </button>
+    <RouterLink to="/centros" class="card1">
+      <img src="../../public/centros.svg" alt="HospitalIcono" height="100px" width="100px" />
+      <h2>Centros</h2>
+    </RouterLink>
+
+    <RouterLink to="/citas" class="card2">
+      <img src="../../public/citas.svg" alt="CitaslIcono" height="100px" width="100px" />
+      <h2>Citas</h2>
+    </RouterLink>
     </div>
     <div class="down">
-      <button class="card3">
+      <RouterLink to="/perfil" class="card3">
         <img src="../../public/perfil.svg" alt="PerfilIcono" height="100px" width="100px" />
         <h2>Perfil</h2>
-      </button>
-      <button class="card4">
-        <img src="../../public/sintomas.svg" alt="sintomasIcono" height="100px" width="100px" />
-        <h2>Sintomas</h2>
-      </button>
+      </RouterLink>
+      <RouterLink to="/sintomas" class="card4">
+      <img src="../../public/sintomas.svg" alt="SintomasIcono" height="100px" width="100px" />
+      <h2>Sintomas</h2>
+    </RouterLink>
     </div>
   </div>
 </template>

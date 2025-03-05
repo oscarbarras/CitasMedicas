@@ -12,7 +12,8 @@
         <div class="d-flex justify-content-center">
           <!-- <button type="submit" class="btn btn-primary w-50 bg-white text-black ">Iniciar Sesión</button> -->
            
-        <Boton1/>
+            <Boton1 />
+
         </div>
       </form>
     </div>
@@ -20,8 +21,11 @@
   
   <script setup>
   import { ref } from 'vue';
-  import Boton1 from './Boton1.vue';
+  import { useRouter } from 'vue-router';
+  import Boton1 from '../MisComponentes/Boton1.vue';
   
+  const router = useRouter();
+
   const loginData = ref({
     username: '',
     password: ''
@@ -36,8 +40,9 @@
       });
       if (response.ok) {
         const data = await response.json();
-        console.log('Inicio de sesión exitoso:', data);
-        alert('Inicio de sesión exitoso');
+        //console.log('Inicio de sesión exitoso:', data);
+        //alert('Inicio de sesión exitoso');
+        router.push('/inicio');
       } else {
         throw new Error('Credenciales incorrectas');
       }

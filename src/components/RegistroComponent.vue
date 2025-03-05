@@ -110,7 +110,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import Boton2 from './Boton2.vue';
+import Boton2 from '../MisComponentes/Boton2.vue';
 
 const userData = ref({
   name: '',

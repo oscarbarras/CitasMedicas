@@ -3,6 +3,7 @@ import Home from '@/pages/Home.vue'
 import Registro from '@/pages/Registro.vue'
 import Login from '@/pages/Login.vue'
 import Inicio from '@/pages/Inicio.vue'
+import Centros from '@/pages/Centros.vue'
 
 
 const router = createRouter({
@@ -27,6 +28,11 @@ const router = createRouter({
       path: '/inicio',
       name: 'inicio',
       component: Inicio
+    },
+    {
+      path: '/centros',
+      name: 'centros',
+      component: Centros
     }
   ]
 })

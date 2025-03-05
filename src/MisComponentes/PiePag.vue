@@ -1,15 +1,17 @@
 <style scoped>
   .parent {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+    overflow: hidden; 
   }
 
   .child {
-    width: 50px;
-    height: 50px;
+    width: 51px;
+    height: 51px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,6 +31,7 @@
       -100px 100px;
     /*transform: rotate3d(0.5, 1, 0, 30deg);*/
     transform: perspective(180px) rotateX(60deg) translateY(2px);
+    
   }
 
   .child-1:hover {
