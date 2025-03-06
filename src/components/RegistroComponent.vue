@@ -111,6 +111,9 @@
 <script setup>
 import { ref } from 'vue';
 import Boton2 from '../MisComponentes/Boton2.vue';
+import { useRouter } from 'vue-router'; 
+
+const router = useRouter(); 
 
 const userData = ref({
   name: '',
@@ -144,6 +147,7 @@ const submitForm = async () => {
       const data = await response.json();
       console.log('Datos del usuario guardados:', data);
       alert('Registro exitoso');
+      router.push('/login');
     } else {
       throw new Error('Error en la respuesta del servidor');
     }
