@@ -201,20 +201,34 @@
   
 </style>
 
-
 <template>
-    <div>
-        <h1 class="text-center my-4">Centros</h1>
-    </div>
+  <div class="container mt-4">
+    <h1 class="text-center my-4">Centros</h1>
 
-    <div class="centers-container ">
-      <div v-for="center in centers" :key="center.id" class="center-card">
+    <!-- Contenedor para los mapas y centros en una sola fila -->
+    <div class="row justify-content-center w-100">
+      <!-- Mapa 1 (hasta la izquierda) -->
+      <div class="col-md-3 mb-4">
+        <div class="card text-white shadow" style="background-color: rgba(0, 0, 0, 0.6);">
+          <div class="card-header text-warning text-center fs-4">
+            <i class="bi bi-map"></i> Nos encontramos aquí
+          </div>
+          <div class="card-body p-0">
+            <iframe class="w-100 rounded-bottom" style="height: 250px; border: 0;"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.6038940578673!2d-3.7122747846110426!3d40.42387407936447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422629b238bf7f%3A0x3460baf97dfdfb!2sPlaza%20de%20Espa%C3%B1a%2C%2028013%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+              allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Centro 1 -->
+      <div v-if="centers.length > 0" class="col-md-3 mb-4">
         <div class="card">
           <div class="content">
             <div class="back">
               <div class="back-content">
                 <img src="../../public/centros.svg" alt="HospitalIcono" height="100px" width="100px" />
-                <strong>{{ center.name }}</strong>
+                <strong>{{ centers[0].name }}</strong>
               </div>
             </div>
             <div class="front">
@@ -227,10 +241,10 @@
                 <small class="badge">Centro</small>
                 <div class="description">
                   <div class="title">
-                    {{center.name }}
+                    {{ centers[0].name }}
                   </div>
                   <p class="card-footer">
-                    {{ center.address }}
+                    {{ centers[0].address }}
                   </p>
                 </div>
               </div>
@@ -238,8 +252,56 @@
           </div>
         </div>
       </div>
+
+      <!-- Centro 2 -->
+      <div v-if="centers.length > 1" class="col-md-3 mb-4">
+        <div class="card">
+          <div class="content">
+            <div class="back">
+              <div class="back-content">
+                <img src="../../public/centros.svg" alt="HospitalIcono" height="100px" width="100px" />
+                <strong>{{ centers[1].name }}</strong>
+              </div>
+            </div>
+            <div class="front">
+              <div class="img">
+                <div class="circle"></div>
+                <div class="circle" id="right"></div>
+                <div class="circle" id="bottom"></div>
+              </div>
+              <div class="front-content">
+                <small class="badge">Centro</small>
+                <div class="description">
+                  <div class="title">
+                    {{ centers[1].name }}
+                  </div>
+                  <p class="card-footer">
+                    {{ centers[1].address }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa 2 (hasta la derecha) -->
+      <div class="col-md-3 mb-4">
+        <div class="card text-white shadow" style="background-color: rgba(0, 0, 0, 0.6);">
+          <div class="card-header text-warning text-center fs-4">
+            <i class="bi bi-map"></i> Nos encontramos aquí
+          </div>
+          <div class="card-body p-0">
+            <iframe class="w-100 rounded-bottom" style="height: 250px; border: 0;"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.6038940578673!2d-3.7122747846110426!3d40.42387407936447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422629b238bf7f%3A0x3460baf97dfdfb!2sPlaza%20de%20Espa%C3%B1a%2C%2028013%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+              allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
     </div>
-  </template>
+  </div>
+</template>
+
   
 
 <script setup>
@@ -249,7 +311,7 @@ const centers = ref([]);
 const loading = ref(false);
 const errorMessage = ref("");
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MTIwNjIwNywianRpIjoiOGJhZjc0NGEtNzUwYi00YzFjLWE1MTktZjdjNTYxY2IzZmVjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im8iLCJuYmYiOjE3NDEyMDYyMDcsImNzcmYiOiJhMjI0OTQwZS0yZDBlLTRjZTctODQ1My1mNmMxMjVmNmI3YjAiLCJleHAiOjE3NDEyMDcxMDd9.zSSlT5ldeTY4kp0zlj8qQoTsFbaFtcceazKzwMFtIVY';
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MTI2Nzg5NCwianRpIjoiNzkzMjg3ZTMtZDQyNC00MjcwLWFmMTUtNGEwOWFmNTVjMGM2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im8iLCJuYmYiOjE3NDEyNjc4OTQsImNzcmYiOiI2Y2NiMWNjMS1lODdkLTQ4ZjUtYTk0Ni0zYTgwNDYyZGE2YzIiLCJleHAiOjE3NDEyNjg3OTR9.3zgUyF9uTcXyRQ2btb3VzD2pskaWgQ5wOvsN7aQAY8g';
 
 const fetchCenters = async () => {
   loading.value = true;
