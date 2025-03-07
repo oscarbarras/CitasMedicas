@@ -1,3 +1,143 @@
+<template>
+  <div class="container mt-4">
+    <h1 class="text-center my-4 w-50 rounded-pill">Centros</h1>
+
+    <div class="container-md">
+      <div class="row justify-content-center align-items-center">
+        <div class="d-flex flex-column w-25 ">
+          <button class="btn custom-button success mb-5">Reservar cita</button>
+          <button class="btn custom-button danger" onclick="window.open('https://www.google.es/maps/dir/Colegio+Joyfe,+Calle+de+Vital+Aza,+Madrid/Centro+M%C3%A9dico+Sanitas+Alcobendas,+Blvr.+de+Salvador+Allende,+2,+28108+Alcobendas,+Madrid/@40.4841375,-3.7444482,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xd422f6b02f54c27:0x2d2f90a0f1470f21!2m2!1d-3.6393782!2d40.4332459!1m5!1m1!1s0xd422cf62cd81851:0xc0bd7cafb9f4677c!2m2!1d-3.6360096!2d40.5368198!3e3?entry=ttu&g_ep=EgoyMDI1MDMwNC.wIKXMDSoASAFQAw%3D%3D', '_blank');">Como llegar</button></div>
+        <div v-if="centers.length > 0" class="col-12 col-md-6 col-lg-3 mb-4">
+          <div class="card">
+            <div class="content">
+              <div class="back">
+                <div class="back-content">
+                  <img src="../../public/hospital.png" alt="HospitalIcono" height="100px" width="100px" />
+                  <strong>{{ centers[0].name }}</strong>
+                </div>
+              </div>
+              <div class="front">
+                <div class="img">
+                  <div class="circle"></div>
+                  <div class="circle" id="right"></div>
+                  <div class="circle" id="bottom"></div>
+                </div>
+                <div class="front-content">
+                  <small class="badge">Centro</small>
+                  <div class="description">
+                    <div class="title">
+                      {{ centers[0].name }}
+                    </div>
+                    <p class="card-footer">
+                      {{ centers[0].address }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="centers.length > 1" class="col-12 col-md-6 col-lg-3 mb-4 d-flex justify-content-end">
+          <div class="card">
+            <div class="content">
+              <div class="back">
+                <div class="back-content">
+                  <img src="../../public/hospital.png" alt="HospitalIcono" height="100px" width="100px" />
+                  <strong>{{ centers[1].name }}</strong>
+                </div>
+              </div>
+              <div class="front">
+                <div class="img">
+                  <div class="circle"></div>
+                  <div class="circle" id="right"></div>
+                  <div class="circle" id="bottom"></div>
+                </div>
+                <div class="front-content">
+                  <small class="badge">Centro</small>
+                  <div class="description">
+                    <div class="title">
+                      {{ centers[1].name }}
+                    </div>
+                    <p class="card-footer">
+                      {{ centers[1].address }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column w-25">
+          <button class="btn custom-button success mb-5">Reservar cita</button>
+          <button class="btn custom-button danger" onclick="window.open('https://www.google.es/maps/dir/Colegio+Joyfe,+Calle+de+Vital+Aza,+Madrid/Centro+M%C3%A9dico+Sanitas+Alcobendas,+Blvr.+de+Salvador+Allende,+2,+28108+Alcobendas,+Madrid/@40.4841375,-3.7444482,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xd422f6b02f54c27:0x2d2f90a0f1470f21!2m2!1d-3.6393782!2d40.4332459!1m5!1m1!1s0xd422cf62cd81851:0xc0bd7cafb9f4677c!2m2!1d-3.6360096!2d40.5368198!3e3?entry=ttu&g_ep=EgoyMDI1MDMwNC.wIKXMDSoASAFQAw%3D%3D', '_blank');">Como llegar</button>
+       </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-12 col-md-6 mb-4">
+        <div class="bg-primary  card text-white w-100" style="background-color: rgba(0, 123, 255, 0.7);">
+          <div class="card-header text-white text-center fs-4">
+            <i class="bi bi-map"></i> Madrid Norte
+          </div>
+          <div class="card-body p-0">
+            <iframe class="w-100 rounded-bottom h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2206.972195125787!2d-3.638523456917089!3d40.53545753334029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422cf62cd81851%3A0xc0bd7cafb9f4677c!2sCentro%20M%C3%A9dico%20Sanitas%20Alcobendas!5e0!3m2!1ses!2ses!4v1741278168193!5m2!1ses!2ses" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-4 ">
+        <div class="card text-white bg-primary w-100" style="background-color: rgba(0, 0, 0, 0.6);">
+          <div class="card-header text-white text-center fs-4">
+            <i class="bi bi-map"></i> Madrid Sur
+          </div>
+          <div class="card-body p-0">
+            <iframe class="w-100 rounded-bottom h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24325.009931203298!2d-3.862150274281664!3d40.350636537297135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418ff5851d2655%3A0x19f36494d075ba45!2sCentro%20Sanitario%20Sandoval%20Sur!5e0!3m2!1ses!2ses!4v1741278536494!5m2!1ses!2ses" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<script setup>
+import { ref, onMounted } from 'vue';
+
+const centers = ref([]);
+const loading = ref(false);
+const errorMessage = ref("");
+
+const fetchCenters = async () => {
+  loading.value = true;
+  errorMessage.value = "";
+  try {
+    const storedToken = localStorage.getItem('authToken');
+    if (!storedToken) {
+      throw new Error("Token no encontrado");
+    }
+
+    const response = await fetch('http://127.0.0.1:5000/centers', {
+      headers: {
+        'Authorization': "Bearer " + storedToken,
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) throw new Error("Error al obtener centros");
+    centers.value = await response.json();
+  } catch (error) {
+    errorMessage.value = error.message;
+  } finally {
+    loading.value = false;
+  }
+};
+
+onMounted(() => {
+  fetchCenters();
+});
+</script>
+
 <style scoped>
 
   .card {
@@ -169,6 +309,7 @@
     margin-left: auto; 
     margin-right: auto;
     border-color: black;
+    font-family: "Spectral", serif;
   }
 
  
@@ -187,149 +328,30 @@
     }
   }
 
-  
-</style>
-
-<template>
-  <div class="container mt-4">
-    <h1 class="text-center my-4 w-50 rounded-pill">Centros</h1>
-
-    <div class="container-md">
-      <div class="row justify-content-center ">
-        <div v-if="centers.length > 0" class="col-12 col-md-6 col-lg-3 mb-4 ">
-          <div class="card">
-            <div class="content">
-              <div class="back">
-                <div class="back-content ">
-                  <img src="../../public/hospital.png" alt="HospitalIcono" height="100px" width="100px" />
-                  <strong>{{ centers[0].name }}</strong>
-                </div>
-              </div>
-              <div class="front">
-                <div class="img">
-                  <div class="circle"></div>
-                  <div class="circle" id="right"></div>
-                  <div class="circle" id="bottom"></div>
-                </div>
-                <div class="front-content">
-                  <small class="badge">Centro</small>
-                  <div class="description">
-                    <div class="title">
-                      {{ centers[0].name }}
-                    </div>
-                    <p class="card-footer">
-                      {{ centers[0].address }}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="centers.length > 1" class="col-12 col-md-6 col-lg-3 mb-4 d-flex justify-content-end">
-          <div class="card ">
-            <div class="content ">
-              <div class="back ">
-                <div class="back-content ">
-                  <img src="../../public/hospital.png" alt="HospitalIcono" height="100px" width="100px" />
-                  <strong>{{ centers[1].name }}</strong>
-                </div>
-              </div>
-              <div class="front">
-                <div class="img">
-                  <div class="circle"></div>
-                  <div class="circle" id="right"></div>
-                  <div class="circle" id="bottom"></div>
-                </div>
-                <div class="front-content">
-                  <small class="badge">Centro</small>
-                  <div class="description">
-                    <div class="title">
-                      {{ centers[1].name }}
-                    </div>
-                    <p class="card-footer">
-                      {{ centers[1].address }}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row justify-content-center mt-4">
-      <div class="col-12 col-md-6 mb-4">
-        <div class="bg-primary  card text-white w-100" style="background-color: rgba(0, 123, 255, 0.7);" >
-          <div class="card-header text-white text-center fs-4">
-            <i class="bi bi-map"></i> Madrid Norte
-          </div>
-          <div class="card-body p-0">
-            <iframe
-              class="w-100 rounded-bottom h-100"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2206.972195125787!2d-3.638523456917089!3d40.53545753334029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422cf62cd81851%3A0xc0bd7cafb9f4677c!2sCentro%20M%C3%A9dico%20Sanitas%20Alcobendas!5e0!3m2!1ses!2ses!4v1741278168193!5m2!1ses!2ses"
-              allowfullscreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 mb-4 ">
-        <div class="card text-white bg-primary w-100" style="background-color: rgba(0, 0, 0, 0.6);">
-          <div class="card-header text-white text-center fs-4">
-            <i class="bi bi-map"></i> Madrid Sur
-          </div>
-          <div class="card-body p-0">
-            <iframe
-              class="w-100 rounded-bottom h-100"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24325.009931203298!2d-3.862150274281664!3d40.350636537297135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418ff5851d2655%3A0x19f36494d075ba45!2sCentro%20Sanitario%20Sandoval%20Sur!5e0!3m2!1ses!2ses!4v1741278536494!5m2!1ses!2ses"
-              allowfullscreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
-
-<script setup>
-import { ref, onMounted } from 'vue';
-
-const centers = ref([]);
-const loading = ref(false);
-const errorMessage = ref("");
-
-const fetchCenters = async () => {
-  loading.value = true;
-  errorMessage.value = "";
-  try {
-    const storedToken = localStorage.getItem('authToken');
-    if (!storedToken) {
-      throw new Error("Token no encontrado");
+  .custom-button {
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        font-weight: 600;
+        padding: 14px 28px; /* Ajusta el padding para un mejor tamaño */
+        font-size: 1.1rem; /* Ajusta el tamaño de la fuente */
     }
 
-    const response = await fetch('http://127.0.0.1:5000/centers', {
-      headers: {
-        'Authorization': "Bearer " + storedToken,
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) throw new Error("Error al obtener centros");
-    centers.value = await response.json();
-  } catch (error) {
-    errorMessage.value = error.message;
-  } finally {
-    loading.value = false;
-  }
-};
+    .custom-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
 
-onMounted(() => {
-  fetchCenters();
-});
-</script>
+    .custom-button.success {
+        background: linear-gradient(135deg, #4CAF50, #81C784);
+        color: white;
+    }
 
+    .custom-button.danger {
+        background: linear-gradient(135deg, #F44336, #E57373);
+        color: white;
+    }
+ 
+  
+</style>
