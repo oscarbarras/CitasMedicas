@@ -5,7 +5,9 @@
     <div class="container-md">
       <div class="row justify-content-center align-items-center">
         <div class="d-flex flex-column w-25 ">
+          <RouterLink to="/citas">
           <button class="btn custom-button success mb-5">Reservar cita</button>
+          </RouterLink>
           <button class="btn custom-button danger" onclick="window.open('https://www.google.es/maps/dir/Colegio+Joyfe,+Calle+de+Vital+Aza,+Madrid/Centro+M%C3%A9dico+Sanitas+Alcobendas,+Blvr.+de+Salvador+Allende,+2,+28108+Alcobendas,+Madrid/@40.4841375,-3.7444482,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xd422f6b02f54c27:0x2d2f90a0f1470f21!2m2!1d-3.6393782!2d40.4332459!1m5!1m1!1s0xd422cf62cd81851:0xc0bd7cafb9f4677c!2m2!1d-3.6360096!2d40.5368198!3e3?entry=ttu&g_ep=EgoyMDI1MDMwNC.wIKXMDSoASAFQAw%3D%3D', '_blank');">Como llegar</button></div>
         <div v-if="centers.length > 0" class="col-12 col-md-6 col-lg-3 mb-4">
           <div class="card">
@@ -69,7 +71,9 @@
           </div>
         </div>
         <div class="d-flex flex-column w-25">
+          <RouterLink to="/citas">
           <button class="btn custom-button success mb-5">Reservar cita</button>
+          </RouterLink>
           <button class="btn custom-button danger" onclick="window.open('https://www.google.es/maps/dir/Colegio+Joyfe,+Calle+de+Vital+Aza,+Madrid/Centro+M%C3%A9dico+Sanitas+Alcobendas,+Blvr.+de+Salvador+Allende,+2,+28108+Alcobendas,+Madrid/@40.4841375,-3.7444482,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xd422f6b02f54c27:0x2d2f90a0f1470f21!2m2!1d-3.6393782!2d40.4332459!1m5!1m1!1s0xd422cf62cd81851:0xc0bd7cafb9f4677c!2m2!1d-3.6360096!2d40.5368198!3e3?entry=ttu&g_ep=EgoyMDI1MDMwNC.wIKXMDSoASAFQAw%3D%3D', '_blank');">Como llegar</button>
        </div>
       </div>
@@ -104,6 +108,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { RouterLink } from 'vue-router';
 
 const centers = ref([]);
 const loading = ref(false);

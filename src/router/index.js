@@ -4,6 +4,7 @@ import Registro from '@/pages/Registro.vue'
 import Login from '@/pages/Login.vue'
 import Inicio from '@/pages/Inicio.vue'
 import Centros from '@/pages/Centros.vue'
+import Citas from '@/pages/Citas.vue'
 
 
 const router = createRouter({
@@ -33,6 +34,11 @@ const router = createRouter({
       path: '/centros',
       name: 'centros',
       component: Centros
+    },
+    {
+      path: '/citas',
+      name: 'citas',
+      component: Citas
     }
   ]
 })
